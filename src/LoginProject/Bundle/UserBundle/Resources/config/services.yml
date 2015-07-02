@@ -1,0 +1,7 @@
+services:
+    login_project_user.listener.doctrine:
+        class: LoginProject\Bundle\UserBundle\EventListener\UserRegisterListener
+        arguments: [@service_container]
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            - { name: doctrine.event_listener, event: postPersist }

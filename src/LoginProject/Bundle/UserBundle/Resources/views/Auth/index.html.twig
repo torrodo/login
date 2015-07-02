@@ -1,0 +1,30 @@
+{% if app.session.flashbag.has('info') %}
+<div style="color: #00ff00">
+    {% for msg in app.session.flashbag.get('info') %}
+        {{ msg  }}<br>
+    {% endfor %}
+</div>
+{% endif %}
+{% if app.session.flashbag.has('error') %}
+    <div style="color: #ff0000">
+        {% for msg in app.session.flashbag.get('error') %}
+            {{ msg  }}<br>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% if error is defined %}
+    <div>{{ dump(error.messageData) }}</div>
+{% endif %}
+
+<br>
+<form action="{{ path('user_auth') }}" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" value="">
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <br>
+    <button type="submit">Login</button>
+</form>
+or <a href="{{ path('user_register_page') }}">Sign-up</a>

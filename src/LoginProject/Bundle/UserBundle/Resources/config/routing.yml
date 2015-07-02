@@ -1,0 +1,24 @@
+user_login_page:
+    path:     /login
+    defaults: { _controller: LoginProjectUserBundle:Auth:login }
+    methods:  [GET]
+
+user_logout:
+    path:     /logout
+    defaults: { _controller: LoginProjectUserBundle:Auth:logout }
+    methods:  [GET]
+
+user_auth:
+    path:     /auth
+    defaults: { _controller: LoginProjectUserBundle:Auth:auth }
+    methods:  [POST]
+
+user_register_page:
+    path:     /register
+    defaults: { _controller: LoginProjectUserBundle:Register:index }
+    methods:  [GET]
+
+user_register:
+    path:     /register
+    defaults: { _controller: LoginProjectUserBundle:Register:save }
+    methods:  [POST]

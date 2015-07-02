@@ -1,0 +1,13 @@
+services:
+#     imports:
+#         - { resource: services.xml }
+    main.auth.manager:
+        class: LoginProject\Bundle\MainBundle\Model\Manager\AuthenticationManager
+        arguments: [@security.context]
+
+    kernel.listener.kernel_events:
+        class: LoginProject\Bundle\MainBundle\EventListener\KernelEventsListener
+        tags:
+            - {name: kernel.event_listener, event: kernel.request, method: onKernelRequest}
+            - {name: kernel.event_listener, event: kernel.exception, method: onKernelException}
+        arguments: [@service_container]

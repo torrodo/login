@@ -1,0 +1,7 @@
+login_project_home:
+    resource: "@LoginProjectHomeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+login_project_user:
+    resource: "@LoginProjectUserBundle/Resources/config/routing.yml"
+    prefix:   /user
